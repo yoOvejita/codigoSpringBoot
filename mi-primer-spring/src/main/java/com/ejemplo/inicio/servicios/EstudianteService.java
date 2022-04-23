@@ -16,4 +16,7 @@ public class EstudianteService {
 	public List<Estudiante> listar(){
 		return estudianteRepo.findAll();
 	}
+	public List<Estudiante> hallarPorNombreApellido(String n, String a){
+		return estudianteRepo.findByNombreAndApellido(n,a);
+	}
 }

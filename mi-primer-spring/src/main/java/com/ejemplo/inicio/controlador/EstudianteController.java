@@ -62,4 +62,10 @@ public class EstudianteController {
 		return ResponseEntity.ok().header("un_valor", "123").body(new Estudiante(10, "Pepe","Pepales"));
 				
 	}
+	@RequestMapping(value="/estudiantex")
+	public ResponseEntity<Object> eliminarEstudiante(){
+		List<Estudiante> estudiantesNA = estServ.hallarPorNombreApellido("Pepe", "Perales");
+		//return ResponseEntity.ok("Se eliminó al estudiante " + id);
+		return new ResponseEntity<>(estudiantesNA, HttpStatus.OK);	
+	}
 }

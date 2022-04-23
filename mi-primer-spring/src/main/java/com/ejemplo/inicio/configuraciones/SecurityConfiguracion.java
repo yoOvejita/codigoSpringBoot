@@ -13,9 +13,11 @@ import org.springframework.security.web.SecurityFilterChain;
 @ComponentScan(basePackages = {"com.ejemplo.inicio.*"})
 @EntityScan("com.ejemplo.inicio.*")
 public class SecurityConfiguracion {
-	@Bean
+	
+	@ Bean
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-			return http.requiresChannel(canal -> canal.anyRequest().requiresSecure())
+			return http.requiresChannel(canal -> canal.anyRequest())
 					.authorizeRequests(autor -> autor.anyRequest().permitAll()).build();
 	}
+	
 }
