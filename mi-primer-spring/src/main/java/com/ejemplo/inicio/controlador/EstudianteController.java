@@ -38,7 +38,10 @@ public class EstudianteController {
 	}
 	@RequestMapping(value="/estudiantes", method=RequestMethod.POST)
 	public ResponseEntity<Object> setEstudiante(@RequestBody Estudiante est){
+		System.out.println("Llega a setEstudiante, listo para registrar");
+		System.out.println("Estudiante: "+est.getId());
 		estudiantes.put(est.getId()+"", est);
+		System.out.println("Lo metió al map");
 		return new ResponseEntity<>("e creó al estudiante " + est.getNombre(), HttpStatus.CREATED);
 	}
 	@RequestMapping(value="/estudiantes/{id}", method=RequestMethod.PUT)
